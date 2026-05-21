@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daemon Strength — Personal Training Studio in Vaishali Nagar, Jaipur</title>
+<meta name="description" content="A no-nonsense personal training studio in Vaishali Nagar, Jaipur. 1-on-1 strength, sports performance and rehab coaching led by Manoj Datic.">
+<link rel="icon" type="image/png" href="logo.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:     '#08080a',
+          ash:     '#141416',
+          steel:   '#1f1f23',
+          coal:    '#2a2a2f',
+          fog:     '#5a5a62',
+          bone:    '#ece5d4',
+          bone2:   '#d8d1bf',
+          blood:   '#c8102e',
+          blooddk: '#7a0a1c',
+          ember:   '#f04438',
+        },
+        fontFamily: {
+          display: ['Anton', 'Impact', 'sans-serif'],
+          slab:    ['"Archivo Black"', 'sans-serif'],
+          serif:   ['"DM Serif Display"', 'Georgia', 'serif'],
+          body:    ['Manrope', 'system-ui', 'sans-serif'],
+        },
+        letterSpacing: {
+          tightest: '-0.04em',
+          'mega':   '-0.045em',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { background:#08080a; }
+  body { font-family: 'Manrope', system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+
+  /* Faint film-grain overlay for atmosphere */
+  .grain::before {
+    content:"";
+    position:absolute; inset:0; pointer-events:none; z-index:1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity:.22; mix-blend-mode:overlay;
+  }
+
+  /* Rough red splatter — used as decorative accent behind big numbers */
+  .splatter::after {
+    content:""; position:absolute; inset:-30% -10% -10% -10%;
+    background:
+      radial-gradient(60px 40px at 22% 35%, rgba(200,16,46,.85), transparent 60%),
+      radial-gradient(120px 70px at 55% 60%, rgba(122,10,28,.55), transparent 65%),
+      radial-gradient(40px 30px at 80% 30%, rgba(200,16,46,.65), transparent 60%),
+      radial-gradient(20px 14px at 35% 78%, rgba(200,16,46,.7), transparent 60%);
+    filter: blur(2px);
+    z-index:0; pointer-events:none;
+  }
+
+  /* Marquee */
+  @keyframes scroll-x {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee-track { animation: scroll-x 38s linear infinite; }
+
+  /* Photo treatments */
+  .duotone { filter: grayscale(.25) contrast(1.08) brightness(.78) saturate(.85); }
+  .hero-photo {
+    filter: grayscale(.35) contrast(1.15) brightness(.55) saturate(.9);
+  }
+
+  /* Section divider — thin red double-line */
+  .rule-red {
+    height:6px;
+    background: linear-gradient(to bottom, #c8102e 0, #c8102e 2px, transparent 2px, transparent 4px, #c8102e 4px, #c8102e 6px);
+  }
+
+  /* Card hover lift */
+  .lift { transition: transform .35s cubic-bezier(.2,.7,.3,1), background-color .25s; }
+  .lift:hover { transform: translateY(-4px); }
+
+  /* Anchor offset for sticky bar */
+  section[id] { scroll-margin-top: 84px; }
+
+  /* Subtle reveal on load */
+  @keyframes rise {
+    from { opacity:0; transform: translateY(14px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+  .rise { animation: rise .9s cubic-bezier(.2,.7,.3,1) both; }
+  .d1 { animation-delay:.05s; } .d2 { animation-delay:.15s; }
+  .d3 { animation-delay:.25s; } .d4 { animation-delay:.35s; } .d5 { animation-delay:.45s; }
+
+  /* Vertical text */
+  .vtext { writing-mode: vertical-rl; transform: rotate(180deg); }
+
+  /* Instagram embed cap so they're consistent in grid */
+  .instagram-media { min-width:0 !important; margin:0 !important; max-width:100% !important; }
+
+  /* Big tracking display utility */
+  .display { font-family:'Anton', Impact, sans-serif; line-height:.85; letter-spacing:-0.035em; }
+
+  /* Outline display text — for editorial accent */
+  .stroke-text {
+    -webkit-text-stroke: 1.5px #ece5d4;
+    color: transparent;
+  }
+
+  /* "ticker dot" used between marquee items */
+  .tdot { display:inline-block; width:9px; height:9px; background:#c8102e; border-radius:9999px; margin: 0 1.5rem; vertical-align: middle; }
+
+  /* Numbered eyebrow */
+  .eyebrow {
+    font-family:'Archivo Black', sans-serif;
+    letter-spacing:.22em;
+    font-size:.7rem;
+    text-transform:uppercase;
+    color:#c8102e;
+  }
+  @media (min-width: 768px) { .eyebrow { font-size:.78rem; } }
+
+  /* Pull-quote opening glyph */
+  .qmark::before {
+    content:"\201C";
+    font-family:'DM Serif Display', Georgia, serif;
+    font-size:8rem; line-height:.6;
+    color:#c8102e;
+    display:block;
+    margin-bottom:.5rem;
+  }
+</style>
+</head>
+
+<body class="bg-ink text-bone font-body antialiased selection:bg-blood selection:text-bone">
+
+<!-- ============================================================ STICKY HEADER -->
+<header class="fixed top-0 inset-x-0 z-50 bg-ink/90 backdrop-blur-md border-b border-coal">
+  <div class="max-w-[1500px] mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+    <a href="#top" class="flex items-center gap-2.5 group">
+      <span class="h-10 w-10 sm:h-11 sm:w-11 shrink-0 flex items-center justify-center">
+        <img src="logo.png" alt="Daemon Strength" class="h-full w-full object-contain">
+      </span>
+      <span class="hidden xs:flex flex-col leading-none">
+        <span class="font-display text-[1.05rem] sm:text-[1.25rem] tracking-tight">DAEMON STRENGTH</span>
+        <span class="text-[9px] sm:text-[10px] tracking-[.28em] text-fog uppercase mt-0.5">Vaishali Nagar · Jaipur</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[13px] uppercase tracking-[.18em] font-semibold text-bone/85">
+      <a href="#approach" class="hover:text-blood transition">Approach</a>
+      <a href="#why" class="hover:text-blood transition">Why Train Here</a>
+      <a href="#inside" class="hover:text-blood transition">The Floor</a>
+      <a href="#voices" class="hover:text-blood transition">Voices</a>
+      <a href="#visit" class="hover:text-blood transition">Visit</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="tel:+917976720232" aria-label="Call the gym"
+         class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 border border-bone/30 hover:border-bone text-bone text-xs sm:text-sm uppercase tracking-[.18em] font-semibold transition">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72a2 2 0 0 1 1.72 2z"/></svg>
+        Call
+      </a>
+      <a href="tel:+917976720232" aria-label="Call" class="sm:hidden inline-flex items-center justify-center w-10 h-10 border border-bone/30 text-bone">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72a2 2 0 0 1 1.72 2z"/></svg>
+      </a>
+      <a href="https://wa.me/917976720232" target="_blank" rel="noopener" aria-label="Message on WhatsApp"
+         class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-blood hover:bg-ember text-bone text-xs sm:text-sm uppercase tracking-[.18em] font-bold transition">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.998 3.648 3.977-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+        <span class="hidden xs:inline">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ HERO -->
+<section id="top" class="relative pt-20 sm:pt-24 overflow-hidden">
+  <!-- Background photo -->
+  <div class="absolute inset-0 z-0">
+    <img src="wide-shot.png" alt="" class="absolute inset-0 w-full h-full object-cover hero-photo">
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/95 via-ink/80 to-ink"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-transparent"></div>
+  </div>
+
+  <div class="relative z-10 max-w-[1500px] mx-auto px-5 sm:px-8 pt-10 pb-16 sm:pt-20 sm:pb-28 grid lg:grid-cols-12 gap-8 lg:gap-12">
+
+    <!-- Left rail: small meta -->
+    <div class="hidden lg:flex lg:col-span-1 flex-col justify-between items-center">
+      <div class="vtext text-[10px] tracking-[.4em] uppercase text-fog">Est. 2024 · Jaipur</div>
+      <div class="vtext text-[10px] tracking-[.4em] uppercase text-blood">26.9087° N / 75.7344° E</div>
+    </div>
+
+    <!-- Main column -->
+    <div class="lg:col-span-8 relative">
+      <!-- Logo stamp + tag rail -->
+      <div class="flex items-center gap-4 mb-7 sm:mb-10 rise">
+        <div class="shrink-0 h-20 w-20 sm:h-24 sm:w-24 drop-shadow-[0_8px_24px_rgba(200,16,46,.45)]">
+          <img src="logo.png" alt="Daemon Strength logo" class="w-full h-full object-contain">
+        </div>
+        <div class="text-[10px] sm:text-[11px] tracking-[.32em] uppercase leading-relaxed text-bone/80">
+          A Premium<br>Personal Training<br>Studio
+        </div>
+        <div class="hidden sm:block h-px flex-1 bg-bone/20"></div>
+        <div class="hidden sm:flex items-center gap-2 text-[10px] tracking-[.28em] uppercase text-blood/90">
+          <span class="h-1.5 w-1.5 bg-blood rounded-full animate-pulse"></span>
+          Open 24 Hours
+        </div>
+      </div>
+
+      <!-- Eyebrow -->
+      <div class="eyebrow mb-5 rise d1">A No-Nonsense, Results-Driven Space.</div>
+
+      <!-- Mega headline -->
+      <h1 class="display text-[18vw] sm:text-[12vw] lg:text-[8.5rem] xl:text-[10rem] uppercase rise d2">
+        Real Strength
+        <span class="block text-blood">Is Built</span>
+        <span class="block">By Hand.</span>
+      </h1>
+
+      <p class="mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-bone/85 rise d3">
+        Daemon Strength is a 1-on-1 personal training studio in Vaishali Nagar, Jaipur. Every program is built around <em class="font-serif italic text-bone">your</em> biomechanics, your goal, and the way your body actually moves — coached by <span class="text-bone font-semibold">Manoj Datic</span>, former senior cricketer and 15-year sports & fitness specialist.
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 rise d4">
+        <a href="https://wa.me/917976720232?text=Hi%20Daemon%20Strength%2C%20I%27d%20like%20to%20know%20about%20membership."
+           target="_blank" rel="noopener"
+           class="group inline-flex items-center justify-between gap-4 bg-blood hover:bg-ember text-bone px-6 py-5 transition">
+          <span class="font-display text-2xl sm:text-3xl tracking-tight uppercase">Message on WhatsApp</span>
+          <svg class="w-7 h-7 -mr-1 group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:+917976720232"
+           class="group inline-flex items-center justify-between gap-4 border border-bone/40 hover:border-bone hover:bg-bone hover:text-ink px-6 py-5 transition">
+          <span class="font-display text-2xl sm:text-3xl tracking-tight uppercase">Call 79767 20232</span>
+          <svg class="w-6 h-6 -mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72a2 2 0 0 1 1.72 2z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Side rail: ratings + meta cards -->
+    <aside class="lg:col-span-3 flex flex-col gap-4 mt-2 lg:mt-0 rise d5">
+      <div class="border border-bone/15 bg-ash/70 backdrop-blur-sm p-5">
+        <div class="flex items-baseline gap-2">
+          <div class="font-display text-5xl text-bone">5.0</div>
+          <div class="flex text-blood text-lg leading-none mt-1">★★★★★</div>
+        </div>
+        <div class="mt-2 text-[11px] tracking-[.28em] uppercase text-fog">Google · 13 reviews</div>
+      </div>
+      <div class="border border-bone/15 bg-ash/70 backdrop-blur-sm p-5">
+        <div class="font-display text-4xl text-bone leading-none">15<span class="text-blood">yrs</span></div>
+        <div class="mt-2 text-[11px] tracking-[.28em] uppercase text-fog">Coach experience<br>Fitness & sports</div>
+      </div>
+      <div class="border border-bone/15 bg-ash/70 backdrop-blur-sm p-5">
+        <div class="font-display text-4xl text-bone leading-none">1:1</div>
+        <div class="mt-2 text-[11px] tracking-[.28em] uppercase text-fog">Personal training<br>No crowded floors</div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Marquee strip -->
+  <div class="relative z-10 bg-blood text-bone border-y border-blood">
+    <div class="overflow-hidden whitespace-nowrap py-3 sm:py-4">
+      <div class="marquee-track inline-flex font-display uppercase text-2xl sm:text-3xl tracking-tight">
+        <span class="px-6">Powerlifting</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Biomechanics-Led</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Sports Performance</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Injury Rehab</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Women's Coaching</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Online Programs</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Open 24 Hours</span><span class="tdot bg-bone"></span>
+        <!-- duplicate set for seamless loop -->
+        <span class="px-6">Powerlifting</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Biomechanics-Led</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Sports Performance</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Injury Rehab</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Women's Coaching</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Online Programs</span><span class="tdot bg-bone"></span>
+        <span class="px-6">Open 24 Hours</span><span class="tdot bg-bone"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ APPROACH / ABOUT -->
+<section id="approach" class="relative bg-ink py-20 sm:py-32">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
+
+    <div class="lg:col-span-5 order-2 lg:order-1">
+      <div class="relative">
+        <img src="pic-from-above.jpg" alt="Inside Daemon Strength gym floor" class="w-full aspect-[3/4] object-cover duotone">
+        <div class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-blood text-bone p-4 sm:p-6 max-w-[260px]">
+          <div class="font-serif italic text-base sm:text-lg leading-snug">
+            "It's raw, intense, and built for those who are hungry to put in the work."
+          </div>
+          <div class="mt-3 text-[10px] tracking-[.28em] uppercase text-bone/80">— Rubaina, member</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <div class="eyebrow mb-4">The Approach</div>
+      <h2 class="display text-6xl sm:text-7xl lg:text-8xl uppercase mb-8">
+        Not your typical<br>
+        <span class="text-blood">commercial gym.</span>
+      </h2>
+
+      <div class="space-y-6 text-base sm:text-lg leading-relaxed text-bone/80 max-w-xl">
+        <p>
+          Daemon Strength was opened by <span class="text-bone font-semibold">Manoj Datic</span> — a former senior-level cricketer described in our reviews as <em class="font-serif italic text-bone">the fastest bowler in Rajasthan</em> — after fifteen years inside competitive sport and strength coaching. He built a studio for people who were tired of crowded floors and templated workouts.
+        </p>
+        <p>
+          Every program here is one-on-one. We start by understanding how <em>your</em> body actually moves: where it's tight, where it leaks force, what previous injuries left behind. Then we build a plan around it — strength, rehab, sport, or fat loss — and grade it up, week by week.
+        </p>
+        <p>
+          The studio is co-owned by <span class="text-bone font-semibold">Kiran ma'am</span>, who runs dedicated personal training for women — a female-friendly environment that members credit for finally making the gym feel like a place they belong.
+        </p>
+      </div>
+
+      <!-- Signature pillars -->
+      <div class="mt-10 grid grid-cols-3 gap-px bg-coal border border-coal">
+        <div class="bg-ink p-5">
+          <div class="eyebrow mb-1">01</div>
+          <div class="font-display text-2xl sm:text-3xl uppercase leading-none">Sports<br>Training</div>
+        </div>
+        <div class="bg-ink p-5">
+          <div class="eyebrow mb-1">02</div>
+          <div class="font-display text-2xl sm:text-3xl uppercase leading-none">Weight Loss<br>Expert</div>
+        </div>
+        <div class="bg-ink p-5">
+          <div class="eyebrow mb-1">03</div>
+          <div class="font-display text-2xl sm:text-3xl uppercase leading-none">Fitness<br>Center</div>
+        </div>
+      </div>
+      <p class="mt-3 text-[11px] tracking-[.28em] uppercase text-fog">The three pillars — straight from the studio's own bio</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule-red"></div>
+
+<!-- ============================================================ COACH FEATURE -->
+<section class="relative bg-bone text-ink py-20 sm:py-28 overflow-hidden">
+  <div class="absolute top-0 right-0 w-full sm:w-1/2 h-full opacity-[.07]"
+       style="background-image: radial-gradient(circle, #08080a 1px, transparent 1px); background-size: 14px 14px;"></div>
+
+  <div class="relative max-w-[1400px] mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="lg:col-span-7">
+      <div class="text-[11px] tracking-[.32em] uppercase text-blood font-slab mb-4">Meet the Coach</div>
+      <h2 class="display text-6xl sm:text-7xl lg:text-[7rem] uppercase leading-[.85]">
+        Manoj<br>
+        <span class="text-blood">Datic.</span>
+      </h2>
+      <div class="font-serif italic text-2xl sm:text-3xl mt-6 text-ink/80 leading-snug max-w-2xl">
+        "Manoj bhaiya was the fastest bowler in Rajasthan and recently opened Daemon Strength. With his 15 years of experience in fitness and sports, I gained 7kg in the first 30 days alone."
+      </div>
+      <div class="mt-4 text-[11px] tracking-[.28em] uppercase text-ink/50">— Manish, member training from the Netherlands</div>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-3 text-[15px] text-ink/80">
+        <div class="flex gap-3"><span class="text-blood font-slab">→</span> Biomechanics & movement coaching</div>
+        <div class="flex gap-3"><span class="text-blood font-slab">→</span> Strength training & powerlifting</div>
+        <div class="flex gap-3"><span class="text-blood font-slab">→</span> Cricket / fast-bowler conditioning</div>
+        <div class="flex gap-3"><span class="text-blood font-slab">→</span> Injury rehab — neck, back, shoulder</div>
+        <div class="flex gap-3"><span class="text-blood font-slab">→</span> Weight gain & weight loss programming</div>
+        <div class="flex gap-3"><span class="text-blood font-slab">→</span> Online personal training</div>
+      </div>
+
+      <a href="https://www.instagram.com/manoj.datic/" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 mt-10 text-sm tracking-[.18em] uppercase font-bold text-ink hover:text-blood transition">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.77.13 4.9.33 4.14.63 3.35.94 2.68 1.35 2.01 2.01 1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.77.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63 19.1.33 18.23.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+        @manoj.datic
+      </a>
+    </div>
+
+    <div class="lg:col-span-5">
+      <!-- Coach card -->
+      <div class="bg-ink text-bone p-8 sm:p-10 border-l-[6px] border-blood relative">
+        <div class="absolute top-0 right-0 font-display text-[8rem] leading-none text-blood/15 select-none pointer-events-none">07</div>
+        <div class="text-[11px] tracking-[.28em] uppercase text-blood mb-3">Co-Owner</div>
+        <div class="font-display text-5xl sm:text-6xl uppercase leading-none">Kiran<br>ma'am</div>
+        <p class="mt-5 text-bone/75 leading-relaxed text-[15px]">
+          Runs Daemon Strength's dedicated women's personal training sessions. Members single her out as the reason the studio finally feels like a space where women can lift seriously without performing for anyone else.
+        </p>
+        <div class="mt-8 pt-6 border-t border-coal flex items-center gap-3 text-[11px] tracking-[.28em] uppercase text-fog">
+          <span class="h-1.5 w-1.5 bg-blood rounded-full"></span>
+          Officially women-owned · LGBTQ+ friendly
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ WHY TRAIN HERE -->
+<section id="why" class="relative bg-ink py-20 sm:py-28">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 sm:mb-16">
+      <div>
+        <div class="eyebrow mb-4">Why Train Here</div>
+        <h2 class="display text-6xl sm:text-7xl lg:text-[7rem] uppercase leading-[.88]">
+          Six reasons<br>
+          <span class="stroke-text">members stay.</span>
+        </h2>
+      </div>
+      <p class="max-w-md text-bone/70 text-base leading-relaxed">
+        Every line below is something a real member wrote on Google. We left the testimonials below — the features above just connect the dots.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-coal border border-coal">
+
+      <article class="bg-ash p-7 sm:p-8 lift">
+        <div class="flex items-start justify-between mb-6">
+          <span class="font-slab text-blood text-sm tracking-[.22em]">01</span>
+          <svg class="w-9 h-9 text-bone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="8" r="3.5"/>
+            <path d="M5 21c1.5-3.5 4-5 7-5s5.5 1.5 7 5"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-3xl uppercase leading-none mb-3">1-on-1<br>Personal Training</h3>
+        <p class="text-bone/70 text-[15px] leading-relaxed">
+          No crowded floors. Every program is built and adjusted for the person on it — week by week, lift by lift.
+        </p>
+      </article>
+
+      <article class="bg-ash p-7 sm:p-8 lift">
+        <div class="flex items-start justify-between mb-6">
+          <span class="font-slab text-blood text-sm tracking-[.22em]">02</span>
+          <svg class="w-9 h-9 text-bone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 12h2M18 12h2M12 4v2M12 18v2"/>
+            <circle cx="12" cy="12" r="6"/>
+            <circle cx="12" cy="12" r="2.2"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-3xl uppercase leading-none mb-3">Biomechanics-<br>Led Strength</h3>
+        <p class="text-bone/70 text-[15px] leading-relaxed">
+          "His deep understanding of biomechanics made every session both safe and effective." Form first. Loads follow.
+        </p>
+      </article>
+
+      <article class="bg-ash p-7 sm:p-8 lift">
+        <div class="flex items-start justify-between mb-6">
+          <span class="font-slab text-blood text-sm tracking-[.22em]">03</span>
+          <svg class="w-9 h-9 text-bone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 12c4-6 14-6 18 0"/>
+            <circle cx="12" cy="12" r="2"/>
+            <path d="M12 14v6M9 20h6"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-3xl uppercase leading-none mb-3">Sports<br>Performance</h3>
+        <p class="text-bone/70 text-[15px] leading-relaxed">
+          Coached by a former state-level fast bowler. Active programs for cricketers — plyo, speed, conditioning.
+        </p>
+      </article>
+
+      <article class="bg-ash p-7 sm:p-8 lift">
+        <div class="flex items-start justify-between mb-6">
+          <span class="font-slab text-blood text-sm tracking-[.22em]">04</span>
+          <svg class="w-9 h-9 text-bone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2v6"/>
+            <path d="M5 9a7 7 0 0 1 14 0v3c0 4-3 7-7 7s-7-3-7-7V9z"/>
+            <path d="M9 13l2 2 4-4"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-3xl uppercase leading-none mb-3">Injury<br>Rehabilitation</h3>
+        <p class="text-bone/70 text-[15px] leading-relaxed">
+          Members have rebuilt around neck, lower-back and shoulder injuries — under custom rehab plans graded session by session.
+        </p>
+      </article>
+
+      <article class="bg-ash p-7 sm:p-8 lift">
+        <div class="flex items-start justify-between mb-6">
+          <span class="font-slab text-blood text-sm tracking-[.22em]">05</span>
+          <svg class="w-9 h-9 text-bone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="7" r="3"/>
+            <path d="M6 21c1-4 3.5-6 6-6s5 2 6 6"/>
+            <path d="M3 13l1 1M21 13l-1 1"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-3xl uppercase leading-none mb-3">Women-Led<br>Training</h3>
+        <p class="text-bone/70 text-[15px] leading-relaxed">
+          Co-owner Kiran ma'am runs dedicated women's sessions. Officially women-owned and LGBTQ+ friendly.
+        </p>
+      </article>
+
+      <article class="bg-ash p-7 sm:p-8 lift">
+        <div class="flex items-start justify-between mb-6">
+          <span class="font-slab text-blood text-sm tracking-[.22em]">06</span>
+          <svg class="w-9 h-9 text-bone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3 2"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-3xl uppercase leading-none mb-3">Open<br>24 Hours</h3>
+        <p class="text-bone/70 text-[15px] leading-relaxed">
+          Train on your schedule — early shift, late shift, or 2am. The doors don't close.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ EQUIPMENT SHOWCASE -->
+<section class="relative bg-ink pb-20 sm:pb-28">
+  <div class="max-w-[1500px] mx-auto px-5 sm:px-8">
+    <div class="flex items-baseline justify-between gap-6 mb-8 sm:mb-12">
+      <div>
+        <div class="eyebrow mb-3">Inside the Studio</div>
+        <h2 class="display text-5xl sm:text-6xl lg:text-7xl uppercase leading-none">Built for<br>real work.</h2>
+      </div>
+      <div class="hidden sm:block font-serif italic text-bone/55 text-lg max-w-xs text-right">
+        "Powerlifting rigs and strongman tools to conditioning gear."
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4">
+      <figure class="relative group overflow-hidden bg-ash">
+        <img src="smith-machine.jpg" alt="Cresfitness power rack with weight plates and lifting belts"
+             class="w-full aspect-[4/5] object-cover duotone group-hover:scale-105 transition duration-700">
+        <figcaption class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-ink to-transparent">
+          <div class="text-[10px] tracking-[.28em] uppercase text-blood mb-1">01 · The Rack</div>
+          <div class="font-display text-2xl uppercase">Squat. Bench.<br>Pull.</div>
+        </figcaption>
+      </figure>
+      <figure class="relative group overflow-hidden bg-ash">
+        <img src="dumbell-rack.jpg" alt="Full rack of Welcare dumbbells from 2.5 kg to 25 kg"
+             class="w-full aspect-[4/5] object-cover duotone group-hover:scale-105 transition duration-700">
+        <figcaption class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-ink to-transparent">
+          <div class="text-[10px] tracking-[.28em] uppercase text-blood mb-1">02 · The Iron</div>
+          <div class="font-display text-2xl uppercase">2.5 → 40 kg.<br>Every Jump.</div>
+        </figcaption>
+      </figure>
+      <figure class="relative group overflow-hidden bg-ash">
+        <img src="pic-from-above.jpg" alt="Daemon Strength gym floor — open training space with climbing rope and red equipment"
+             class="w-full aspect-[4/5] object-cover duotone group-hover:scale-105 transition duration-700">
+        <figcaption class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-ink to-transparent">
+          <div class="text-[10px] tracking-[.28em] uppercase text-blood mb-1">03 · The Floor</div>
+          <div class="font-display text-2xl uppercase">Sleds. Ropes.<br>Open Space.</div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ INSTAGRAM EMBEDS -->
+<section id="inside" class="relative bg-bone text-ink py-20 sm:py-28">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-14">
+      <div>
+        <div class="text-[11px] tracking-[.32em] uppercase text-blood font-slab mb-3">@daemonstrength</div>
+        <h2 class="display text-5xl sm:text-6xl lg:text-7xl uppercase leading-[.9]">
+          Watch the<br><span class="text-blood">floor.</span>
+        </h2>
+      </div>
+      <a href="https://www.instagram.com/daemonstrength/" target="_blank" rel="noopener"
+         class="self-start md:self-end inline-flex items-center gap-2 text-sm tracking-[.18em] uppercase font-bold border-b-2 border-ink pb-1 hover:text-blood hover:border-blood transition">
+        Follow on Instagram
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 sm:gap-6">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DOXunk1ABmc/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DMdGFQdBAyP/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DSXGNthAT7u/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRvzmjwgRYA/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DGKnZ0vBe6x/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DGpMu8XBfIc/" data-instgrm-version="14"></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MEMBER REVIEWS -->
+<section id="voices" class="relative bg-ink py-20 sm:py-28">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 sm:mb-16">
+      <div>
+        <div class="eyebrow mb-3">Member Voices</div>
+        <h2 class="display text-6xl sm:text-7xl lg:text-[6.5rem] uppercase leading-[.85]">
+          5.0 on Google.<br>
+          <span class="text-blood">Every Review.</span>
+        </h2>
+      </div>
+      <div class="text-bone/70 text-base leading-relaxed max-w-sm">
+        13 five-star reviews on Google Maps. Below are four — pulled verbatim, lightly trimmed for length.
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6 sm:gap-8">
+
+      <article class="bg-ash p-7 sm:p-9 border-l-[3px] border-blood relative">
+        <div class="qmark"></div>
+        <p class="text-bone/85 text-[15px] sm:text-base leading-relaxed">
+          After months of struggling with constant neck pain and visiting several doctors and physiotherapists, I was almost ready to give up. Manoj didn't give me a one-size-fits-all routine — he designed a rehab plan specifically for my neck pain while also adding strength training. <span class="text-bone">In just 30 days, I was doing full pushups with excellent form.</span>
+        </p>
+        <footer class="mt-6 pt-5 border-t border-coal flex items-center justify-between">
+          <div>
+            <div class="font-display text-2xl uppercase tracking-tight">Priyanka</div>
+            <div class="text-[10px] tracking-[.28em] uppercase text-fog mt-1">Member · Neck rehab</div>
+          </div>
+          <div class="text-blood text-base leading-none">★★★★★</div>
+        </footer>
+      </article>
+
+      <article class="bg-ash p-7 sm:p-9 border-l-[3px] border-blood relative">
+        <div class="qmark"></div>
+        <p class="text-bone/85 text-[15px] sm:text-base leading-relaxed">
+          Even though I was working out regularly in the Netherlands, I wasn't seeing real changes. <span class="text-bone">Manoj bhaiya was the fastest bowler in Rajasthan</span> and recently opened Daemon Strength. With his 15 years of experience in fitness and sports, I gave it a shot. <span class="text-bone">I gained 7kg in the first 30 days alone.</span>
+        </p>
+        <footer class="mt-6 pt-5 border-t border-coal flex items-center justify-between">
+          <div>
+            <div class="font-display text-2xl uppercase tracking-tight">Manish</div>
+            <div class="text-[10px] tracking-[.28em] uppercase text-fog mt-1">Member · Weight gain</div>
+          </div>
+          <div class="text-blood text-base leading-none">★★★★★</div>
+        </footer>
+      </article>
+
+      <article class="bg-ash p-7 sm:p-9 border-l-[3px] border-blood relative">
+        <div class="qmark"></div>
+        <p class="text-bone/85 text-[15px] sm:text-base leading-relaxed">
+          Trainer Manoj sir is very dedicated for his clients — for me he is the best personal trainer. I am getting regular HIT sessions and <span class="text-bone">as per his guidance I have lost 12kg in the last 3 months.</span> Surely recommend if you want to lose or gain weight.
+        </p>
+        <footer class="mt-6 pt-5 border-t border-coal flex items-center justify-between">
+          <div>
+            <div class="font-display text-2xl uppercase tracking-tight">Hemant</div>
+            <div class="text-[10px] tracking-[.28em] uppercase text-fog mt-1">Local Guide · Fat loss</div>
+          </div>
+          <div class="text-blood text-base leading-none">★★★★★</div>
+        </footer>
+      </article>
+
+      <article class="bg-ash p-7 sm:p-9 border-l-[3px] border-blood relative">
+        <div class="qmark"></div>
+        <p class="text-bone/85 text-[15px] sm:text-base leading-relaxed">
+          This isn't your typical commercial gym — it's a no-nonsense, results-driven space. Manoj's approach is personalized, science-backed, and brutally effective. <span class="text-bone">The gym is well-equipped with everything from powerlifting rigs and strongman tools to conditioning gear.</span> Raw, intense, and built for those who are hungry to put in the work.
+        </p>
+        <footer class="mt-6 pt-5 border-t border-coal flex items-center justify-between">
+          <div>
+            <div class="font-display text-2xl uppercase tracking-tight">Rubaina</div>
+            <div class="text-[10px] tracking-[.28em] uppercase text-fog mt-1">Member · Strength</div>
+          </div>
+          <div class="text-blood text-base leading-none">★★★★★</div>
+        </footer>
+      </article>
+
+    </div>
+
+    <div class="mt-10 sm:mt-14 text-center">
+      <a href="https://www.google.com/maps?cid=2716058416292788135" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-3 text-sm tracking-[.22em] uppercase font-bold text-bone/85 hover:text-blood transition border-b border-bone/30 hover:border-blood pb-1">
+        Read all 13 reviews on Google
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MEMBERSHIP / CTA -->
+<section class="relative bg-blood text-bone overflow-hidden">
+  <div class="absolute inset-0 opacity-[.08]"
+       style="background-image: repeating-linear-gradient(45deg, transparent 0 18px, #08080a 18px 19px);"></div>
+  <div class="relative max-w-[1400px] mx-auto px-5 sm:px-8 py-20 sm:py-28 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-7">
+      <div class="text-[11px] tracking-[.32em] uppercase font-slab mb-4 text-bone/80">Become A Member</div>
+      <h2 class="display text-5xl sm:text-6xl lg:text-[6.5rem] uppercase leading-[.85]">
+        Plans are tailored<br>
+        <span class="font-serif italic font-normal normal-case lowercase text-bone">to you,</span><br>
+        not the room.
+      </h2>
+      <p class="mt-7 text-bone/90 text-base sm:text-lg leading-relaxed max-w-xl">
+        We don't publish a price list — every program is scoped after a short conversation about your goal, schedule and history. Walk in, message us, or call.
+      </p>
+    </div>
+    <div class="lg:col-span-5 flex flex-col gap-4">
+      <a href="https://wa.me/917976720232?text=Hi%20Daemon%20Strength%2C%20I%27d%20like%20membership%20details."
+         target="_blank" rel="noopener"
+         class="group flex items-center justify-between gap-4 bg-ink text-bone hover:bg-bone hover:text-ink px-6 py-6 transition">
+        <span class="flex items-center gap-3">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
+          <span class="font-display text-3xl tracking-tight uppercase text-left leading-none">WhatsApp Us<br><span class="text-sm tracking-[.18em] font-body opacity-70">+91 7976720232</span></span>
+        </span>
+        <svg class="w-6 h-6 group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:+917976720232"
+         class="group flex items-center justify-between gap-4 border-2 border-bone hover:bg-bone hover:text-ink px-6 py-6 transition">
+        <span class="flex items-center gap-3">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72a2 2 0 0 1 1.72 2z"/></svg>
+          <span class="font-display text-3xl tracking-tight uppercase text-left leading-none">Call The Studio<br><span class="text-sm tracking-[.18em] font-body opacity-70">079767 20232</span></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ VISIT US -->
+<section id="visit" class="relative bg-ink py-20 sm:py-28">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-8 lg:gap-12">
+
+    <div class="lg:col-span-5">
+      <div class="eyebrow mb-3">Visit Us</div>
+      <h2 class="display text-5xl sm:text-6xl lg:text-7xl uppercase leading-[.88]">
+        Lane 10.<br>Vaishali<br><span class="text-blood">Nagar.</span>
+      </h2>
+
+      <div class="mt-10 space-y-6">
+        <div class="border-t border-coal pt-5">
+          <div class="text-[10px] tracking-[.32em] uppercase text-blood font-slab mb-1.5">Address</div>
+          <p class="text-bone/90 text-[15px] leading-relaxed">
+            B-141, Lane 10, Acharya Vinoba Bhave Nagar,<br>
+            B Block, Vaishali Nagar,<br>
+            Jaipur, Rajasthan 302021
+          </p>
+          <a href="https://www.google.com/maps?cid=2716058416292788135" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 mt-3 text-sm tracking-[.18em] uppercase font-bold text-bone hover:text-blood transition">
+            Get directions
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+
+        <div class="border-t border-coal pt-5">
+          <div class="text-[10px] tracking-[.32em] uppercase text-blood font-slab mb-1.5">Hours</div>
+          <p class="text-bone/90 text-[15px]">Open <span class="text-bone font-bold">24 hours</span> · Every day</p>
+        </div>
+
+        <div class="border-t border-coal pt-5">
+          <div class="text-[10px] tracking-[.32em] uppercase text-blood font-slab mb-1.5">Contact</div>
+          <div class="flex flex-col gap-1.5 text-[15px]">
+            <a href="tel:+917976720232" class="text-bone hover:text-blood transition">079767 20232</a>
+            <a href="https://wa.me/917976720232" target="_blank" rel="noopener" class="text-bone hover:text-blood transition">WhatsApp →</a>
+            <a href="https://www.instagram.com/daemonstrength/" target="_blank" rel="noopener" class="text-bone hover:text-blood transition">@daemonstrength</a>
+          </div>
+        </div>
+
+        <div class="border-t border-coal pt-5">
+          <div class="text-[10px] tracking-[.32em] uppercase text-blood font-slab mb-1.5">Plus Code</div>
+          <p class="text-fog font-mono text-sm tracking-wider">WP5M+GP Jaipur</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="relative bg-ash border border-coal aspect-[4/3] lg:aspect-auto lg:h-full min-h-[420px]">
+        <iframe
+          src="https://www.google.com/maps?q=Daemon+Strength+B-141+Lane+10+Vaishali+Nagar+Jaipur&output=embed"
+          class="absolute inset-0 w-full h-full grayscale contrast-125"
+          style="border:0; filter: invert(.92) hue-rotate(180deg) contrast(.85) saturate(.7);"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer class="relative bg-ash border-t-4 border-blood">
+  <div class="max-w-[1500px] mx-auto px-5 sm:px-8 py-14 sm:py-20 grid sm:grid-cols-2 lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="h-14 w-14">
+          <img src="logo.png" alt="Daemon Strength logo" class="w-full h-full object-contain">
+        </div>
+        <div class="leading-none">
+          <div class="font-display text-2xl tracking-tight">DAEMON STRENGTH</div>
+          <div class="text-[10px] tracking-[.28em] text-fog uppercase mt-1.5">Personal Training Studio</div>
+        </div>
+      </div>
+      <p class="text-bone/65 text-sm leading-relaxed max-w-sm">
+        A premium personal training studio in Vaishali Nagar, Jaipur. Coached by Manoj Datic. Co-owned by Kiran ma'am. Built for serious work.
+      </p>
+    </div>
+
+    <div class="lg:col-span-3">
+      <div class="text-[10px] tracking-[.32em] uppercase text-blood font-slab mb-4">Find Us</div>
+      <p class="text-bone/80 text-[14px] leading-relaxed">
+        B-141, Lane 10,<br>
+        Acharya Vinoba Bhave Nagar,<br>
+        B Block, Vaishali Nagar,<br>
+        Jaipur, Rajasthan 302021
+      </p>
+    </div>
+
+    <div class="lg:col-span-3">
+      <div class="text-[10px] tracking-[.32em] uppercase text-blood font-slab mb-4">Reach Us</div>
+      <ul class="space-y-2 text-[14px]">
+        <li><a href="tel:+917976720232" class="text-bone/90 hover:text-blood transition">079767 20232</a></li>
+        <li><a href="https://wa.me/917976720232" target="_blank" rel="noopener" class="text-bone/90 hover:text-blood transition">WhatsApp →</a></li>
+        <li><a href="https://www.instagram.com/daemonstrength/" target="_blank" rel="noopener" class="text-bone/90 hover:text-blood transition">@daemonstrength</a></li>
+        <li><a href="https://www.google.com/maps?cid=2716058416292788135" target="_blank" rel="noopener" class="text-bone/90 hover:text-blood transition">Google Maps →</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-[10px] tracking-[.32em] uppercase text-blood font-slab mb-4">Hours</div>
+      <p class="text-bone/90 text-[14px]">Open <span class="text-bone font-bold">24 hrs</span><br>Every day of the week</p>
+    </div>
+  </div>
+
+  <div class="border-t border-coal">
+    <div class="max-w-[1500px] mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[11px] tracking-[.22em] uppercase text-fog">
+      <span>© 2026 Daemon Strength · Jaipur</span>
+      <span>5.0 ★ · 13 reviews on Google</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Instagram embed script -->
+<script async src="//www.instagram.com/embed.js"></script>
+
+</body>
+</html>

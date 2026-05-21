@@ -1,0 +1,201 @@
+{
+  "_meta": {
+    "scraped_at": "2026-05-21",
+    "sources": [
+      "https://www.google.com/maps (place CID 2716058416292788135)",
+      "https://www.justdial.com/Jaipur/Daemon-Strength-Gym-...",
+      "https://www.instagram.com/daemonstrength/ (logged-out, OG meta fallback)"
+    ],
+    "notes": "Instagram served a login wall; profile metadata pulled from og:description, posts pulled from leaked shortcodes in HTML + per-post og:description fetches. Trainer name appears spelled multiple ways across Google reviews (Dattic, Datic, Diatic, Dactic) but his own Instagram handle @manoj.datic confirms the correct spelling is Manoj Datic."
+  },
+
+  "business": {
+    "name": "Daemon Strength",
+    "tagline_from_listing": "Best Gym in Vaishali Nagar Jaipur । Personal Trainer ।",
+    "name_hindi": "डेमन स्ट्रेंथ- बेस्ट जिम इन वैशाली नगर जयपुर । पर्सनल ट्रेनर ।",
+    "category": "Fitness Centre / Personal Training Studio",
+    "subtitle": "A Premium Personal Training Studio",
+    "address": "B-141, Lane 10, Acharya Vinoba Bhave Nagar, B Block, Vaishali Nagar, Jaipur, Rajasthan 302021",
+    "phone_display": "079767 20232",
+    "phone_tel": "07976720232",
+    "phone_intl": "917976720232",
+    "wa_link": "https://wa.me/917976720232",
+    "hours": "Open 24 hours",
+    "coordinates": { "lat": 26.9087962, "lng": 75.7343525 },
+    "plus_code": "WP5M+GP Jaipur, Rajasthan",
+    "google_maps_url": "https://www.google.com/maps?cid=2716058416292788135",
+    "google_maps_embed_src": "https://www.google.com/maps?q=Daemon+Strength+Vaishali+Nagar+Jaipur&output=embed",
+    "google_rating": 5.0,
+    "google_review_count": 13,
+    "justdial_rating": 5.0,
+    "justdial_review_count": 11,
+    "attributes": ["LGBTQ+ friendly", "Identifies as women-owned", "Business Owned By Women", "WiFi"]
+  },
+
+  "people": {
+    "head_coach": {
+      "name": "Manoj Datic",
+      "instagram": "https://www.instagram.com/manoj.datic/",
+      "honorific": "Manoj sir / Manoj bhaiya",
+      "background": [
+        "Former senior-level cricket player; reviews describe him as the fastest bowler in Rajasthan",
+        "15 years of experience in fitness & sports (per Manish Samota review)",
+        "Recently founded Daemon Strength Gym in Vaishali Nagar"
+      ],
+      "specialties": [
+        "Biomechanics & movement coaching",
+        "Strength training & powerlifting",
+        "Sports performance training (cricket / fast bowling)",
+        "Injury rehabilitation (neck, lower back, shoulder)",
+        "Weight gain and weight loss programming",
+        "Functional training, endurance, CrossFit",
+        "Nutrition and diet planning",
+        "Online personal training"
+      ]
+    },
+    "co_owner": {
+      "name": "Kiran",
+      "honorific": "Kiran ma'am",
+      "role": "Co-owner; runs special classes for women's personal training (per Manish Samota review)"
+    }
+  },
+
+  "instagram_profile": {
+    "handle": "daemonstrength",
+    "url": "https://www.instagram.com/daemonstrength/",
+    "display_name": "Daemon Strength - Personal Training Studio",
+    "category": "Gym/Physical fitness centre",
+    "bio": "Coach -@manoj.datic Best Personal Training Studio in Vaishali Nagar Jaipur +91 7976720232\nSports Training । Weight loss Expert । Fitness Center",
+    "bio_three_pillars": ["Sports Training", "Weight Loss Expert", "Fitness Center"],
+    "stats": { "posts": 70, "followers": 58, "following": 14 }
+  },
+
+  "selected_instagram_posts": [
+    {
+      "url": "https://www.instagram.com/reel/DOXunk1ABmc/",
+      "theme": "Female strength / training in action",
+      "caption_summary": "Member Puja hits a 25kg dumbbell bench press — 'Strong girls don't wait for opportunities, they create them.'",
+      "engagement": "27 likes"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DMdGFQdBAyP/",
+      "theme": "Youth fitness coaching",
+      "caption_summary": "Start 'em young — early training builds strength, discipline & focus. Top-engaging post.",
+      "engagement": "108 likes"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DSXGNthAT7u/",
+      "theme": "Sports / cricket performance training",
+      "caption_summary": "Intro to plyo & speed work — athletic foundation for Nidhish, a young medium pacer.",
+      "engagement": "17 likes"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DRvzmjwgRYA/",
+      "theme": "Sports training / 14-yr-old state cricketer",
+      "caption_summary": "14-year-old state cricketer started training with Daemon Strength.",
+      "engagement": "11 likes"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DGKnZ0vBe6x/",
+      "theme": "Powerlifting / form coaching",
+      "caption_summary": "Flat Bench Press form breakdown — elbow angle, grip, bar path, leg drive.",
+      "engagement": "23 likes"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DGpMu8XBfIc/",
+      "theme": "Coaching philosophy",
+      "caption_summary": "There's a HUGE difference between just completing an exercise and using a movement to grow your muscles.",
+      "engagement": "41 likes"
+    }
+  ],
+
+  "distinctives_for_features_section": [
+    {
+      "headline": "1-on-1 personal training",
+      "evidence": "Multiple reviewers describe it as a 'personal training studio' rather than a typical gym — programs customized to body, condition, and goals."
+    },
+    {
+      "headline": "Coached by a former state-level athlete",
+      "evidence": "Reviewer Manish Samota: 'He was the fastest bowler in Rajasthan' + 15 years in fitness & sports."
+    },
+    {
+      "headline": "Biomechanics-led strength training",
+      "evidence": "Reviewers repeatedly cite 'biomechanics', 'proper form', 'natural movement' — this is the core method, not generic workouts."
+    },
+    {
+      "headline": "Injury rehab specialty",
+      "evidence": "Documented client recoveries: neck pain (priyanka gupta), lower back (Manmohan Saraswat), shoulder injury (Yashwardhan Singh Rathore)."
+    },
+    {
+      "headline": "Women-led, women-friendly environment",
+      "evidence": "Co-owner Kiran runs women-only sessions; gym is officially women-owned and LGBTQ+ friendly."
+    },
+    {
+      "headline": "Sports performance + youth athlete coaching",
+      "evidence": "Active cricket training for medium pacers, young state cricketers — visible in IG content."
+    },
+    {
+      "headline": "Open 24 hours",
+      "evidence": "Google Maps confirmed."
+    },
+    {
+      "headline": "Online personal training also offered",
+      "evidence": "Multiple reviews mention online programs; Manish Samota trained remotely from the Netherlands."
+    }
+  ],
+
+  "selected_reviews_for_site": [
+    {
+      "name_first": "Priyanka",
+      "rating": 5,
+      "date": "a year ago",
+      "trimmed_text": "After months of struggling with constant neck pain and visiting several doctors and physiotherapists, I was almost ready to give up. Then I tried personal training with Manoj at Daemon Strength. He designed a rehab plan specifically for my neck pain while also adding strength training. His deep understanding of biomechanics made every session both safe and effective. In just 30 days, I was doing full pushups with excellent form."
+    },
+    {
+      "name_first": "Manish",
+      "rating": 5,
+      "date": "a year ago",
+      "trimmed_text": "Even though I was working out regularly in the Netherlands, I wasn't seeing any real changes. Manoj bhaiya was the fastest bowler in Rajasthan and recently opened Daemon Strength. With his 15 years of experience in fitness and sports, I gave it a shot. I got a custom workout plan, strength training, and a weight gain strategy. I gained 7kg in the first 30 days alone."
+    },
+    {
+      "name_first": "Rubaina",
+      "rating": 5,
+      "date": "a year ago",
+      "trimmed_text": "This isn't your typical commercial gym — it's a no-nonsense, results-driven space. Manoj's approach is personalized, science-backed, and brutally effective. His knowledge of biomechanics, nutrition, and performance training is unmatched. The gym is well-equipped with everything from powerlifting rigs and strongman tools to conditioning gear."
+    },
+    {
+      "name_first": "Hemant",
+      "rating": 5,
+      "date": "a year ago",
+      "trimmed_text": "Trainer Manoj sir is very dedicated for his clients. For me he is the best personal trainer. I am getting regular HIT sessions and as per his guidance I have lost 12kg in the last 3 months. Surely recommend if you want to lose or gain weight."
+    },
+    {
+      "name_first": "Yashwardhan",
+      "rating": 5,
+      "date": "a month ago",
+      "trimmed_text": "I started here because I didn't feel comfortable in crowded gyms — I needed proper 1-on-1 personal training. When I started, Manoj focused on very basic exercises and gradually progressed. After 3 months I can lift much heavier weights. I also had a slight shoulder injury and he built a customized shoulder recovery rehab plan around it."
+    }
+  ],
+
+  "all_google_reviews_raw": [
+    {"author": "Vish Agarwal", "rating": 5, "date": "2 months ago", "text": "I joined Daemon Strength Gym in Vaishali Nagar, Jaipur, and I'm genuinely impressed with the overall experience. The gym is extremely well-equipped, clean, and perfectly maintained. It has all the modern machines, free weights, and functional training setups that anyone beginner or advanced would need. A special mention for trainer Manoj Datic, who has been my personal trainer for the past few weeks. He truly understands body mechanics, strength training techniques, and individual fitness goals."},
+    {"author": "Priyanka Gupta", "rating": 5, "date": "a year ago", "text": "After months of struggling with constant neck pain and visiting several doctors and physiotherapists, I was almost ready to give up. Then I decided to try personal training with Manoj Datic at Daemon Strength Gym. He designed a rehab plan specifically for my neck pain while also adding strength training and weight loss strategies. In just 30 days, I was doing full pushups with excellent form. Daemon Strength has a female-friendly environment, promoting empowerment and safety for everyone."},
+    {"author": "Keshav Aggarwal", "rating": 5, "date": "8 months ago", "text": "A few years back, I had the chance to train with Manoj Datic, and it was one of the best decisions for my fitness journey. He guided me with proper form, diet tips, and a balanced routine. His approach is practical, motivating, and customized to your fitness level."},
+    {"author": "Gaurav Sadhwani", "rating": 5, "date": "9 months ago", "text": "Great personal training gym in Vaishali Nagar! Supportive trainer, clean space, and workouts perfectly tailored to my goals. It's one of the best weight loss studios around, and Manoj Datic is truly one of the best personal trainers in Jaipur."},
+    {"author": "Rubaina Nagpal", "rating": 5, "date": "a year ago", "text": "If you're serious about transforming your body, building real strength, or simply leveling up your fitness game, Daemon Strength Gym is where you want to be. The gym is well-equipped with everything from powerlifting rigs and strongman tools to conditioning gear. It's raw, intense, and built for those who are hungry to put in the work."},
+    {"author": "Manish Samota", "rating": 5, "date": "a year ago", "text": "Manoj Datic Bhaiya was the fastest bowler in Rajasthan and recently opened the Daemon Strength Gym in Vaishali Nagar. With his 15 years of experience in fitness & sports I decided to give it a shot. I gained 7kg in the first 30 days alone. Kiran mam, the co-owner, runs special classes for women's personal training."},
+    {"author": "Hemant Kumar", "rating": 5, "date": "a year ago", "text": "Trainer Monoj sir is very dedicated for his clients, for me he is the best personal trainer. I am getting regular HIT sessions and as per his guidance I have lose 12kg weight in last 3 months."},
+    {"author": "dark gaming", "rating": 5, "date": "Edited 4 months ago", "text": "Best Gym and training experience so far. There are very few coaches and trainers who teach like this and it was my pleasure to learn a lot under your humble guidance @Manoj Sir."},
+    {"author": "Manmohan Saraswat", "rating": 5, "date": "Edited 2 weeks ago", "text": "Best place for sports injury in Jaipur. I was struggling with lower back pain, but after joining Daemon Strength I've seen real improvement in my recovery. Manoj sir is very supportive and focuses on proper technique."},
+    {"author": "Prateek Sain", "rating": 5, "date": "3 weeks ago", "text": "Best gym in Jaipur, specially Manoj who helped me reduce 30 kg weight without any marketing supplements except protein powder. Just a best workout and healthy homemade diet."},
+    {"author": "Yashwardhan Singh Rathore", "rating": 5, "date": "a month ago", "text": "After training here for 3 months I can say that it is the best personal training centre in Vaishali Nagar Jaipur. I was specifically looking for the best gym where I could get proper 1-on-1 personal training because I didn't feel comfortable in crowded gyms."},
+    {"author": "Yuvpartap Singh", "rating": 5, "date": "4 months ago", "text": "I'm an IT professional and have been struggling with balance, stability, and physical weakness. Manoj Bhaiya (owner) understood my physical condition and tailored my workout and diet accordingly. In just one month, I'm seeing significant improvement in my stability and recovery."}
+  ],
+
+  "missing_or_skipped": {
+    "pricing": "Not found anywhere — JustDial has no pricing, IG bio has no pricing, no website. Will use a single 'Message us for membership details' CTA card per the brief.",
+    "service_menu": "No structured service list anywhere; will infer the offerings from review evidence (1-on-1 PT, online PT, women's classes, sports training, rehab).",
+    "founding_year": "Not stated; reviewers from 'a year ago' say it had 'recently opened' — gym opened approximately 2024.",
+    "photos_of_facility": "Available on Google Maps and JustDial (32 photos on JustDial) but Maps does not expose photo URLs through the limited view; site will rely on Instagram embed thumbnails for visual proof."
+  }
+}
